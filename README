@@ -1,5 +1,3 @@
-# AI DATA ANALYST
+# AI Data Analyst Agent
 
-An agentic AI-powered data analysis platform that allows users to upload CSV or Excel datasets and analyze them using natural language. The system automatically profiles datasets, detects schemas and data quality issues, and provides analytical insights through a FastAPI-based backend with Pandas and DuckDB.
-
-The project is being developed incrementally toward a full AI Data Analyst agent capable of natural-language-to-SQL generation, query validation, self-correction, automated visualization, statistical analysis, anomaly detection, and insight generation.
+An agentic AI-powered data analysis platform that allows users to upload CSV or Excel datasets and analyze them using natural language.
