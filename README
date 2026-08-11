@@ -4,7 +4,6 @@ An agentic AI-powered data analysis platform that allows users to upload dataset
 
 The long-term goal is to build an AI Data Analyst capable of inspecting datasets, understanding analytical questions, generating and validating SQL, executing analytical workflows, creating visualizations, detecting patterns and anomalies, and generating evidence-backed insights.
 
-
 ---
 
 ## 📌 Project Overview
@@ -22,6 +21,7 @@ The AI Data Analyst Agent aims to automate this workflow.
 
 ### Traditional Workflow
 
+```text
 Dataset
    ↓
 Understand Data
@@ -33,10 +33,11 @@ Analyze
 Create Charts
    ↓
 Interpret Results
-
+```
 
 ### AI Data Analyst Workflow
 
+```text
 Upload Dataset
       ↓
 Dataset Inspection
@@ -56,7 +57,9 @@ Visualization
 Insight Generation
       ↓
 Final Answer
+```
 
+---
 
 # 🎯 Project Goals
 
@@ -64,32 +67,32 @@ The final system aims to provide the capabilities of a junior data analyst throu
 
 ## Core Capabilities
 
-- CSV upload
-- Excel upload
-- Dataset profiling
-- Schema detection
-- Missing-value analysis
-- Duplicate detection
-- Natural-language data querying
-- SQL generation
-- SQL validation
-- SQL execution
-- Automatic visualization
-- Statistical analysis
-- Insight generation
+* CSV upload
+* Excel upload
+* Dataset profiling
+* Schema detection
+* Missing-value analysis
+* Duplicate detection
+* Natural-language data querying
+* SQL generation
+* SQL validation
+* SQL execution
+* Automatic visualization
+* Statistical analysis
+* Insight generation
 
 ## Advanced Capabilities
 
-- Multi-step analysis planning
-- Query self-correction
-- Conversational analysis
-- Anomaly detection
-- Correlation analysis
-- Trend analysis
-- Forecasting
-- Automated exploratory data analysis
-- Automated report generation
-- Analysis history
+* Multi-step analysis planning
+* Query self-correction
+* Conversational analysis
+* Anomaly detection
+* Correlation analysis
+* Trend analysis
+* Forecasting
+* Automated exploratory data analysis
+* Automated report generation
+* Analysis history
 
 ---
 
@@ -97,6 +100,7 @@ The final system aims to provide the capabilities of a junior data analyst throu
 
 ## Current Architecture — Week 1
 
+```text
                     USER
                       │
                       ▼
@@ -129,10 +133,11 @@ The final system aims to provide the capabilities of a junior data analyst throu
               └───────┬────────┘
                       ▼
                   JSON API
-
+```
 
 ## Planned Final Architecture
 
+```text
                          USER
                            │
                            ▼
@@ -166,52 +171,54 @@ The final system aims to provide the capabilities of a junior data analyst throu
                      └────┬─────┘
                           │
                           ▼
-                 ┌────────────────┐
-                 │ Result         │
-                 │ Validation     │
-                 └───────┬────────┘
-                         │
-              ┌──────────┼──────────┐
-              ▼          ▼          ▼
-           Plotly    Statistics     ML
-           Charts      Engine      Models
-              │          │          │
-              └──────────┼──────────┘
-                         ▼
-                  ┌──────────────┐
-                  │ LLM Insight  │
-                  │ Generation   │
-                  └──────┬───────┘
-                         │
-                         ▼
-                    FINAL ANSWER
+                ┌────────────────┐
+                │ Result         │
+                │ Validation     │
+                └───────┬────────┘
+                        │
+             ┌──────────┼──────────┐
+             ▼          ▼          ▼
+          Plotly    Statistics     ML
+          Charts      Engine     Models
+             │          │          │
+             └──────────┼──────────┘
+                        ▼
+                ┌──────────────┐
+                │ LLM Insight  │
+                │ Generation   │
+                └──────┬───────┘
+                       │
+                       ▼
+                  FINAL ANSWER
+```
 
+---
 
 # 🛠️ Technology Stack
 
 ## Current Technologies
 
-| Technology | Purpose |
-|---|---|
-| Python | Backend programming language |
-| FastAPI | REST API framework |
-| Pandas | Dataset ingestion and profiling |
-| NumPy | Numerical operations |
-| DuckDB | Analytical database |
-| openpyxl | Excel file support |
-| Uvicorn | ASGI server |
+| Technology | Purpose                         |
+| ---------- | ------------------------------- |
+| Python     | Backend programming language    |
+| FastAPI    | REST API framework              |
+| Pandas     | Dataset ingestion and profiling |
+| NumPy      | Numerical operations            |
+| DuckDB     | Analytical database             |
+| openpyxl   | Excel file support              |
+| Uvicorn    | ASGI server                     |
 
 ## Planned Technologies
 
-| Technology | Purpose |
-|---|---|
-| LangGraph | Agent orchestration |
-| LLM API | Natural-language reasoning and SQL generation |
-| Pydantic | Data validation |
-| Plotly | Interactive visualizations |
-| Scikit-learn | Machine learning and anomaly detection |
-| React | Frontend dashboard |
-| Docker | Containerization |
+| Technology   | Purpose                                       |
+| ------------ | --------------------------------------------- |
+| LangGraph    | Agent orchestration                           |
+| LLM API      | Natural-language reasoning and SQL generation |
+| Pydantic     | Data validation                               |
+| Plotly       | Interactive visualizations                    |
+| Scikit-learn | Machine learning and anomaly detection        |
+| React        | Frontend dashboard                            |
+| Docker       | Containerization                              |
 
 ---
 
@@ -229,7 +236,7 @@ The first phase focuses on building a reliable data ingestion and profiling laye
 
 ### Workflow
 
-
+```text
 Project Setup
       ↓
 FastAPI
@@ -243,46 +250,46 @@ DuckDB
 Schema Detection
       ↓
 Dataset Profiling
-
+```
 
 ### Completed
 
-- [x] FastAPI project setup
-- [x] CSV file upload
-- [x] Excel file upload
-- [x] Pandas dataset ingestion
-- [x] DuckDB database creation
-- [x] Automatic DuckDB table creation
-- [x] Schema detection
-- [x] Numeric column detection
-- [x] Categorical column detection
-- [x] Date column detection
-- [x] Boolean column detection
-- [x] Missing-value analysis
-- [x] Duplicate-row detection
-- [x] Numerical statistics
-- [x] Categorical value-frequency analysis
-- [x] Dataset profile API
-- [x] Dataset schema API
+* [x] FastAPI project setup
+* [x] CSV file upload
+* [x] Excel file upload
+* [x] Pandas dataset ingestion
+* [x] DuckDB database creation
+* [x] Automatic DuckDB table creation
+* [x] Schema detection
+* [x] Numeric column detection
+* [x] Categorical column detection
+* [x] Date column detection
+* [x] Boolean column detection
+* [x] Missing-value analysis
+* [x] Duplicate-row detection
+* [x] Numerical statistics
+* [x] Categorical value-frequency analysis
+* [x] Dataset profile API
+* [x] Dataset schema API
 
 ### Current API Endpoints
 
-| Method | Endpoint | Description |
-|---|---|---|
-| `GET` | `/` | Check API status |
-| `POST` | `/upload` | Upload CSV or Excel dataset |
-| `GET` | `/datasets/{dataset_id}/profile` | Get dataset profile |
-| `GET` | `/datasets/{dataset_id}/schema` | Get dataset schema |
+| Method | Endpoint                         | Description                 |
+| ------ | -------------------------------- | --------------------------- |
+| `GET`  | `/`                              | Check API status            |
+| `POST` | `/upload`                        | Upload CSV or Excel dataset |
+| `GET`  | `/datasets/{dataset_id}/profile` | Get dataset profile         |
+| `GET`  | `/datasets/{dataset_id}/schema`  | Get dataset schema          |
 
 ### Planned Week 1 Improvements
 
-- [ ] Dataset preview endpoint
-- [ ] Improved date detection
-- [ ] File-size validation
-- [ ] Dataset row limits
-- [ ] Data validation
-- [ ] DuckDB query layer
-- [ ] Unit tests
+* [ ] Dataset preview endpoint
+* [ ] Improved date detection
+* [ ] File-size validation
+* [ ] Dataset row limits
+* [ ] Data validation
+* [ ] DuckDB query layer
+* [ ] Unit tests
 
 ---
 
@@ -292,43 +299,38 @@ Dataset Profiling
 
 The second phase introduces the LLM layer.
 
-
+```text
 Natural Language Question
           ↓
      Schema Context
           ↓
           LLM
           ↓
-      SQL Query
+       SQL Query
           ↓
-    SQL Validation
+     SQL Validation
           ↓
         DuckDB
           ↓
         Result
-
+```
 
 ### Example Questions
 
-
-What is the average revenue?
-
-Which region has the highest profit?
-
-What are the top 10 products by sales?
-
-Which department has the highest average salary?
-
+* What is the average revenue?
+* Which region has the highest profit?
+* What are the top 10 products by sales?
+* Which department has the highest average salary?
 
 ### Planned Features
 
-- [ ] LLM integration
-- [ ] Schema-aware prompting
-- [ ] Natural-language question processing
-- [ ] SQL generation
-- [ ] SQL validation
-- [ ] Safe SQL execution
-- [ ] Query result formatting
+* [ ] LLM integration
+* [ ] Schema-aware prompting
+* [ ] Natural-language question processing
+* [ ] SQL generation
+* [ ] SQL validation
+* [ ] Safe SQL execution
+* [ ] Query result formatting
 
 ---
 
@@ -338,7 +340,7 @@ Which department has the highest average salary?
 
 The third phase converts the basic LLM → SQL pipeline into a stateful agentic workflow.
 
-
+```text
 User Question
       ↓
 Intent Analyzer
@@ -354,39 +356,39 @@ Result Validation
 Self-Correction
       ↓
 Final Result
-
+```
 
 ### Planned Features
 
-- [ ] LangGraph integration
-- [ ] Agent state
-- [ ] Intent analysis
-- [ ] Analysis planning
-- [ ] Tool selection
-- [ ] SQL error analysis
-- [ ] Query regeneration
-- [ ] Self-correction
-- [ ] Retry mechanism
-- [ ] Conversation context
+* [ ] LangGraph integration
+* [ ] Agent state
+* [ ] Intent analysis
+* [ ] Analysis planning
+* [ ] Tool selection
+* [ ] SQL error analysis
+* [ ] Query regeneration
+* [ ] Self-correction
+* [ ] Retry mechanism
+* [ ] Conversation context
 
 ### Self-Correction Workflow
 
-
+```text
 Generated SQL
-     ↓
+      ↓
 Execute Query
-     ↓
-Error?
-  ↙     ↘
-Yes      No
- ↓        ↓
-Analyze  Result
+      ↓
+     Error?
+    ↙      ↘
+  Yes       No
+   ↓         ↓
+Analyze    Result
 Error
- ↓
+   ↓
 Correct SQL
- ↓
-Retry
-
+   ↓
+ Retry
+```
 
 The system will use a limited retry mechanism rather than repeatedly regenerating queries.
 
@@ -398,7 +400,7 @@ The system will use a limited retry mechanism rather than repeatedly regeneratin
 
 The fourth phase adds automatic visualization and natural-language insights.
 
-
+```text
 Analysis Result
       ↓
 Chart Selection
@@ -408,40 +410,39 @@ Plotly Visualization
 Insight Generation
       ↓
 Final Response
-
+```
 
 ### Planned Features
 
-- [ ] Automatic chart selection
-- [ ] Plotly integration
-- [ ] Bar charts
-- [ ] Line charts
-- [ ] Histograms
-- [ ] Scatter plots
-- [ ] Insight generation
-- [ ] Dashboard UI
+* [ ] Automatic chart selection
+* [ ] Plotly integration
+* [ ] Bar charts
+* [ ] Line charts
+* [ ] Histograms
+* [ ] Scatter plots
+* [ ] Insight generation
+* [ ] Dashboard UI
 
 ### Example
 
 For a result such as:
 
-
-Region    Profit
-North     450000
-South     380000
-East      310000
-West      280000
-
+| Region | Profit |
+| ------ | -----: |
+| North  | 450000 |
+| South  | 380000 |
+| East   | 310000 |
+| West   | 280000 |
 
 The visualization agent could select:
 
-
+```text
 Chart Type: Bar Chart
 X-axis: Region
 Y-axis: Profit
+```
 
-
-The insight generator would then explain the result using the actual computed values.
+The insight generator would explain the result using the actual computed values.
 
 ---
 
@@ -453,15 +454,15 @@ The fifth phase introduces machine learning and statistical analysis tools.
 
 ## Statistical Analysis
 
-- [ ] Correlation analysis
-- [ ] Descriptive statistics
-- [ ] Distribution analysis
-- [ ] Trend analysis
-- [ ] Outlier detection
+* [ ] Correlation analysis
+* [ ] Descriptive statistics
+* [ ] Distribution analysis
+* [ ] Trend analysis
+* [ ] Outlier detection
 
 ## Anomaly Detection
 
-
+```text
 User Question
       ↓
 Anomaly Detection Tool
@@ -473,17 +474,17 @@ Detected Anomalies
 Visualization
       ↓
 Explanation
+```
 
+### Planned Model
 
-## Planned model:
-
-
+```python
 sklearn.ensemble.IsolationForest
-
+```
 
 ## Forecasting
 
-
+```text
 Historical Data
       ↓
 Time-Series Preparation
@@ -493,12 +494,13 @@ Forecasting Model
 Future Predictions
       ↓
 Visualization
-
+```
 
 Forecasting will be introduced only after the core analytical workflow is stable.
 
 ## Automated EDA
 
+```text
 Dataset
    ↓
 Profiling
@@ -512,6 +514,7 @@ Outlier Detection
 Trend Analysis
    ↓
 Automatic Insights
+```
 
 ---
 
@@ -523,18 +526,18 @@ The final phase focuses on making the system production-ready.
 
 ### Planned Features
 
-- [ ] Authentication
-- [ ] Dataset history
-- [ ] Conversation history
-- [ ] Caching
-- [ ] Logging
-- [ ] Automated testing
-- [ ] Docker
-- [ ] Deployment
-- [ ] Observability
-- [ ] Evaluation framework
-- [ ] Documentation
-- [ ] Demo
+* [ ] Authentication
+* [ ] Dataset history
+* [ ] Conversation history
+* [ ] Caching
+* [ ] Logging
+* [ ] Automated testing
+* [ ] Docker
+* [ ] Deployment
+* [ ] Observability
+* [ ] Evaluation framework
+* [ ] Documentation
+* [ ] Demo
 
 ---
 
@@ -548,6 +551,7 @@ LLM-generated SQL will be treated as untrusted output.
 
 ### Allowed Analytical Operations
 
+```sql
 SELECT
 FROM
 WHERE
@@ -556,11 +560,11 @@ ORDER BY
 HAVING
 LIMIT
 JOIN
-
+```
 
 ### Restricted Operations
 
-
+```sql
 DROP
 DELETE
 UPDATE
@@ -568,7 +572,7 @@ INSERT
 ALTER
 TRUNCATE
 CREATE
-
+```
 
 Queries will be validated before execution.
 
@@ -578,11 +582,11 @@ If Python-based analysis is introduced, arbitrary LLM-generated Python should no
 
 A restricted execution environment should provide:
 
-- CPU limits
-- Memory limits
-- Execution timeout
-- Restricted filesystem access
-- No network access
+* CPU limits
+* Memory limits
+* Execution timeout
+* Restricted filesystem access
+* No network access
 
 ---
 
@@ -590,44 +594,44 @@ A restricted execution environment should provide:
 
 The final system will include an evaluation dataset containing:
 
-
-Question
-Expected SQL
-Expected Result
-Expected Chart
-
+| Question | Expected SQL | Expected Result | Expected Chart |
+| -------- | ------------ | --------------- | -------------- |
 
 ### Example
 
+**Question:**
 
-Question:
+```text
 What is the average salary by department?
+```
 
-Expected SQL:
+**Expected SQL:**
 
+```sql
 SELECT
     department,
     AVG(salary)
 FROM employees
 GROUP BY department;
-
+```
 
 ## Evaluation Metrics
 
 ### SQL Accuracy
 
-
+```text
 Correct SQL Queries
 -------------------
 Total Queries
-
+```
 
 ### Execution Accuracy
 
+```text
 Successful Executions
 ---------------------
 Total Queries
-
+```
 
 ### Result Accuracy
 
@@ -635,11 +639,11 @@ The generated result will be compared against the expected result from the datab
 
 ### Agent Metrics
 
-- Tool-selection accuracy
-- Average retries
-- Average latency
-- Token usage
-- Query execution time
+* Tool-selection accuracy
+* Average retries
+* Average latency
+* Token usage
+* Query execution time
 
 ---
 
@@ -647,6 +651,7 @@ The generated result will be compared against the expected result from the datab
 
 ## Current Structure
 
+```text
 ai-data-analyst-agent/
 │
 ├── app/
@@ -663,11 +668,11 @@ ai-data-analyst-agent/
 ├── .gitignore
 ├── requirements.txt
 └── README.md
-
+```
 
 ## Planned Final Structure
 
-
+```text
 ai-data-analyst-agent/
 │
 ├── backend/
@@ -731,7 +736,7 @@ ai-data-analyst-agent/
 ├── Dockerfile
 ├── docker-compose.yml
 └── README.md
-
+```
 
 ---
 
@@ -739,9 +744,10 @@ ai-data-analyst-agent/
 
 ## 1. Clone the Repository
 
+```bash
 git clone https://github.com/YOUR_USERNAME/ai-data-analyst-agent.git
 cd ai-data-analyst-agent
-
+```
 
 Replace `YOUR_USERNAME` with your GitHub username.
 
@@ -751,34 +757,35 @@ Replace `YOUR_USERNAME` with your GitHub username.
 
 ### Windows
 
-
+```bash
 python -m venv .venv
-
+```
 
 Activate:
 
-
+```bash
 .venv\Scripts\activate
+```
 
 ### Linux / macOS
 
-
+```bash
 python3 -m venv .venv
-
+```
 
 Activate:
 
-
+```bash
 source .venv/bin/activate
-
+```
 
 ---
 
 ## 3. Install Dependencies
 
-
+```bash
 pip install -r requirements.txt
-
+```
 
 ---
 
@@ -786,18 +793,21 @@ pip install -r requirements.txt
 
 Start the FastAPI development server:
 
+```bash
 uvicorn app.main:app --reload
+```
 
 The application will run at:
 
-
+```text
 http://127.0.0.1:8000
-
+```
 
 Interactive Swagger API documentation:
 
+```text
 http://127.0.0.1:8000/docs
-
+```
 
 ---
 
@@ -807,7 +817,7 @@ The current implementation supports uploading CSV and Excel datasets.
 
 ### Workflow
 
-
+```text
 CSV / Excel
      ↓
 FastAPI
@@ -819,37 +829,37 @@ DuckDB
 Schema Detection
      ↓
 Dataset Profiling
-
+```
 
 ### Dataset Profile
 
 The profiler currently calculates:
 
-- Number of rows
-- Number of columns
-- Column names
-- Missing cells
-- Missing percentage
-- Duplicate rows
-- Numeric columns
-- Categorical columns
-- Date columns
-- Boolean columns
-- Unique values
-- Numerical statistics
-- Top categorical values
+* Number of rows
+* Number of columns
+* Column names
+* Missing cells
+* Missing percentage
+* Duplicate rows
+* Numeric columns
+* Categorical columns
+* Date columns
+* Boolean columns
+* Unique values
+* Numerical statistics
+* Top categorical values
 
 ### Example
 
 For a dataset such as:
 
-
+```text
 industry.csv
-
+```
 
 the system can produce:
 
-
+```text
 Rows: 43
 Columns: 1
 
@@ -867,7 +877,7 @@ Duplicate Rows:
 
 Unique Values:
 43
-
+```
 
 ---
 
@@ -875,19 +885,19 @@ Unique Values:
 
 Once the complete agent is implemented, a user will be able to upload:
 
-
+```text
 ecommerce_sales.csv
-
+```
 
 and ask:
 
-
+```text
 Which product category generated the most revenue in 2025?
-
+```
 
 The planned agent workflow will be:
 
-
+```text
 User Question
       ↓
 Intent Analysis
@@ -905,13 +915,14 @@ Result Validation
 Visualization
       ↓
 Insight Generation
-
+```
 
 The final response could be:
 
-
+```text
 Electronics generated the highest revenue
 in 2025 with total revenue of ₹18.43 lakh.
+```
 
 The response will also contain the relevant visualization and, where appropriate, the generated SQL.
 
@@ -925,21 +936,21 @@ The project follows several important design principles.
 
 The LLM will handle:
 
-- Natural-language understanding
-- Intent detection
-- Analysis planning
-- Tool selection
-- Query generation
-- Result explanation
+* Natural-language understanding
+* Intent detection
+* Analysis planning
+* Tool selection
+* Query generation
+* Result explanation
 
 ## 2. Deterministic Tools for Computation
 
 Actual numerical computation should be performed by deterministic systems such as:
 
-- DuckDB
-- Pandas
-- NumPy
-- Scikit-learn
+* DuckDB
+* Pandas
+* NumPy
+* Scikit-learn
 
 The LLM should not be trusted to perform numerical calculations itself.
 
@@ -949,6 +960,7 @@ The LLM will receive the actual dataset schema rather than guessing column names
 
 For example:
 
+```text
 Table: sales
 
 Columns:
@@ -959,7 +971,7 @@ Columns:
 - quantity
 - revenue
 - profit
-
+```
 
 This reduces incorrect SQL generation and hallucinated columns.
 
@@ -973,14 +985,14 @@ The system will validate the query before sending it to DuckDB.
 
 # 📈 Project Status
 
-| Phase | Status |
-|---|---|
-| Week 1 — Dataset Engine | 🟢 In Progress |
-| Week 2 — Natural Language → SQL | ⚪ Planned |
-| Week 3 — Agentic Workflow | ⚪ Planned |
-| Week 4 — Visualization & Insights | ⚪ Planned |
-| Week 5 — Advanced Analytics | ⚪ Planned |
-| Week 6 — Production & Deployment | ⚪ Planned |
+| Phase                             | Status         |
+| --------------------------------- | -------------- |
+| Week 1 — Dataset Engine           | 🟢 In Progress |
+| Week 2 — Natural Language → SQL   | ⚪ Planned      |
+| Week 3 — Agentic Workflow         | ⚪ Planned      |
+| Week 4 — Visualization & Insights | ⚪ Planned      |
+| Week 5 — Advanced Analytics       | ⚪ Planned      |
+| Week 6 — Production & Deployment  | ⚪ Planned      |
 
 ---
 
@@ -992,11 +1004,11 @@ Computer Science Engineering
 
 Interested in:
 
-- Artificial Intelligence
-- Machine Learning
-- Data Science
-- Generative AI
-- Agentic AI
+* Artificial Intelligence
+* Machine Learning
+* Data Science
+* Generative AI
+* Agentic AI
 
 ---
 
