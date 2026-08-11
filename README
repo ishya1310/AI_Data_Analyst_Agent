@@ -4,7 +4,6 @@ An agentic AI-powered data analysis platform that allows users to upload dataset
 
 The long-term goal is to build an AI Data Analyst capable of inspecting datasets, understanding analytical questions, generating and validating SQL, executing analytical workflows, creating visualizations, detecting patterns and anomalies, and generating evidence-backed insights.
 
-> 🚧 **Current Status:** Week 1 — Dataset Engine
 
 ---
 
@@ -476,7 +475,7 @@ Visualization
 Explanation
 
 
-Planned model:
+## Planned model:
 
 
 sklearn.ensemble.IsolationForest
@@ -740,10 +739,9 @@ ai-data-analyst-agent/
 
 ## 1. Clone the Repository
 
-```bash
 git clone https://github.com/YOUR_USERNAME/ai-data-analyst-agent.git
 cd ai-data-analyst-agent
-```
+
 
 Replace `YOUR_USERNAME` with your GitHub username.
 
@@ -753,35 +751,34 @@ Replace `YOUR_USERNAME` with your GitHub username.
 
 ### Windows
 
-```bash
+
 python -m venv .venv
-```
+
 
 Activate:
 
-```bash
+
 .venv\Scripts\activate
-```
 
 ### Linux / macOS
 
-```bash
+
 python3 -m venv .venv
-```
+
 
 Activate:
 
-```bash
+
 source .venv/bin/activate
-```
+
 
 ---
 
 ## 3. Install Dependencies
 
-```bash
+
 pip install -r requirements.txt
-```
+
 
 ---
 
@@ -789,9 +786,7 @@ pip install -r requirements.txt
 
 Start the FastAPI development server:
 
-```bash
 uvicorn app.main:app --reload
-```
 
 The application will run at:
 
