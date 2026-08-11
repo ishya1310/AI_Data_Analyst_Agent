@@ -21,23 +21,23 @@ The AI Data Analyst Agent aims to automate this workflow.
 
 ### Traditional Workflow
 
-```text
+
 Dataset
    ↓
 Understand Data
    ↓
-Write SQL / Python
+Write SQL 
    ↓
 Analyze
    ↓
 Create Charts
    ↓
 Interpret Results
-```
+
 
 ### AI Data Analyst Workflow
 
-```text
+
 Upload Dataset
       ↓
 Dataset Inspection
@@ -57,7 +57,7 @@ Visualization
 Insight Generation
       ↓
 Final Answer
-```
+
 
 ---
 
@@ -100,7 +100,7 @@ The final system aims to provide the capabilities of a junior data analyst throu
 
 ## Current Architecture — Week 1
 
-```text
+
                     USER
                       │
                       ▼
@@ -133,11 +133,10 @@ The final system aims to provide the capabilities of a junior data analyst throu
               └───────┬────────┘
                       ▼
                   JSON API
-```
+
 
 ## Planned Final Architecture
 
-```text
                          USER
                            │
                            ▼
@@ -190,7 +189,7 @@ The final system aims to provide the capabilities of a junior data analyst throu
                        │
                        ▼
                   FINAL ANSWER
-```
+
 
 ---
 
@@ -236,7 +235,7 @@ The first phase focuses on building a reliable data ingestion and profiling laye
 
 ### Workflow
 
-```text
+
 Project Setup
       ↓
 FastAPI
@@ -250,7 +249,7 @@ DuckDB
 Schema Detection
       ↓
 Dataset Profiling
-```
+
 
 ### Completed
 
@@ -299,7 +298,6 @@ Dataset Profiling
 
 The second phase introduces the LLM layer.
 
-```text
 Natural Language Question
           ↓
      Schema Context
@@ -313,7 +311,7 @@ Natural Language Question
         DuckDB
           ↓
         Result
-```
+
 
 ### Example Questions
 
@@ -340,7 +338,7 @@ Natural Language Question
 
 The third phase converts the basic LLM → SQL pipeline into a stateful agentic workflow.
 
-```text
+
 User Question
       ↓
 Intent Analyzer
@@ -356,7 +354,7 @@ Result Validation
 Self-Correction
       ↓
 Final Result
-```
+
 
 ### Planned Features
 
@@ -373,7 +371,6 @@ Final Result
 
 ### Self-Correction Workflow
 
-```text
 Generated SQL
       ↓
 Execute Query
@@ -388,7 +385,7 @@ Error
 Correct SQL
    ↓
  Retry
-```
+
 
 The system will use a limited retry mechanism rather than repeatedly regenerating queries.
 
@@ -400,7 +397,7 @@ The system will use a limited retry mechanism rather than repeatedly regeneratin
 
 The fourth phase adds automatic visualization and natural-language insights.
 
-```text
+
 Analysis Result
       ↓
 Chart Selection
@@ -410,7 +407,7 @@ Plotly Visualization
 Insight Generation
       ↓
 Final Response
-```
+
 
 ### Planned Features
 
@@ -436,11 +433,11 @@ For a result such as:
 
 The visualization agent could select:
 
-```text
+
 Chart Type: Bar Chart
 X-axis: Region
 Y-axis: Profit
-```
+
 
 The insight generator would explain the result using the actual computed values.
 
@@ -462,7 +459,6 @@ The fifth phase introduces machine learning and statistical analysis tools.
 
 ## Anomaly Detection
 
-```text
 User Question
       ↓
 Anomaly Detection Tool
@@ -474,17 +470,17 @@ Detected Anomalies
 Visualization
       ↓
 Explanation
-```
+
 
 ### Planned Model
 
-```python
+
 sklearn.ensemble.IsolationForest
-```
+
 
 ## Forecasting
 
-```text
+
 Historical Data
       ↓
 Time-Series Preparation
@@ -494,13 +490,13 @@ Forecasting Model
 Future Predictions
       ↓
 Visualization
-```
+
 
 Forecasting will be introduced only after the core analytical workflow is stable.
 
 ## Automated EDA
 
-```text
+
 Dataset
    ↓
 Profiling
@@ -514,7 +510,7 @@ Outlier Detection
 Trend Analysis
    ↓
 Automatic Insights
-```
+
 
 ---
 
@@ -551,7 +547,6 @@ LLM-generated SQL will be treated as untrusted output.
 
 ### Allowed Analytical Operations
 
-```sql
 SELECT
 FROM
 WHERE
@@ -560,19 +555,18 @@ ORDER BY
 HAVING
 LIMIT
 JOIN
-```
+
 
 ### Restricted Operations
 
-```sql
+
 DROP
 DELETE
 UPDATE
 INSERT
 ALTER
 TRUNCATE
-CREATE
-```
+
 
 Queries will be validated before execution.
 
@@ -599,39 +593,38 @@ The final system will include an evaluation dataset containing:
 
 ### Example
 
-**Question:**
+Question:
 
-```text
 What is the average salary by department?
-```
 
-**Expected SQL:**
 
-```sql
+Expected SQL:
+
+
 SELECT
     department,
     AVG(salary)
 FROM employees
 GROUP BY department;
-```
+
 
 ## Evaluation Metrics
 
 ### SQL Accuracy
 
-```text
+
 Correct SQL Queries
 -------------------
 Total Queries
-```
+
 
 ### Execution Accuracy
 
-```text
+
 Successful Executions
 ---------------------
 Total Queries
-```
+
 
 ### Result Accuracy
 
@@ -651,7 +644,7 @@ The generated result will be compared against the expected result from the datab
 
 ## Current Structure
 
-```text
+
 ai-data-analyst-agent/
 │
 ├── app/
@@ -668,11 +661,11 @@ ai-data-analyst-agent/
 ├── .gitignore
 ├── requirements.txt
 └── README.md
-```
+
 
 ## Planned Final Structure
 
-```text
+
 ai-data-analyst-agent/
 │
 ├── backend/
@@ -736,7 +729,7 @@ ai-data-analyst-agent/
 ├── Dockerfile
 ├── docker-compose.yml
 └── README.md
-```
+
 
 ---
 
@@ -799,15 +792,15 @@ uvicorn app.main:app --reload
 
 The application will run at:
 
-```text
+
 http://127.0.0.1:8000
-```
+
 
 Interactive Swagger API documentation:
 
-```text
+
 http://127.0.0.1:8000/docs
-```
+
 
 ---
 
@@ -817,7 +810,7 @@ The current implementation supports uploading CSV and Excel datasets.
 
 ### Workflow
 
-```text
+
 CSV / Excel
      ↓
 FastAPI
@@ -829,7 +822,7 @@ DuckDB
 Schema Detection
      ↓
 Dataset Profiling
-```
+
 
 ### Dataset Profile
 
@@ -853,13 +846,13 @@ The profiler currently calculates:
 
 For a dataset such as:
 
-```text
+
 industry.csv
-```
+
 
 the system can produce:
 
-```text
+
 Rows: 43
 Columns: 1
 
@@ -877,7 +870,7 @@ Duplicate Rows:
 
 Unique Values:
 43
-```
+
 
 ---
 
@@ -885,19 +878,19 @@ Unique Values:
 
 Once the complete agent is implemented, a user will be able to upload:
 
-```text
+
 ecommerce_sales.csv
-```
+
 
 and ask:
 
-```text
+
 Which product category generated the most revenue in 2025?
-```
+
 
 The planned agent workflow will be:
 
-```text
+
 User Question
       ↓
 Intent Analysis
@@ -915,14 +908,14 @@ Result Validation
 Visualization
       ↓
 Insight Generation
-```
+
 
 The final response could be:
 
-```text
+
 Electronics generated the highest revenue
 in 2025 with total revenue of ₹18.43 lakh.
-```
+
 
 The response will also contain the relevant visualization and, where appropriate, the generated SQL.
 
@@ -960,7 +953,6 @@ The LLM will receive the actual dataset schema rather than guessing column names
 
 For example:
 
-```text
 Table: sales
 
 Columns:
@@ -971,7 +963,7 @@ Columns:
 - quantity
 - revenue
 - profit
-```
+
 
 This reduces incorrect SQL generation and hallucinated columns.
 
@@ -998,7 +990,7 @@ The system will validate the query before sending it to DuckDB.
 
 # 👩‍💻 Author
 
-**Ishya Bommireddy**
+Ishya Bommireddy
 
 Computer Science Engineering
 
