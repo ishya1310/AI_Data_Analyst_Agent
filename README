@@ -1,0 +1,846 @@
+
+# 🤖 AI Data Analyst Agent
+
+An agentic AI-powered data analysis platform that allows users to upload datasets and ask questions about their data using natural language.
+
+The system is designed to automatically inspect datasets, understand analytical questions, generate and validate queries, execute analysis, create visualizations, and provide evidence-backed insights.
+
+> 🚧 **Project Status:** Week 1 — Dataset Engine  
+> The current version focuses on dataset ingestion, DuckDB storage, schema detection, and dataset profiling.
+
+---
+
+## 📌 Project Overview
+
+Traditional data analysis often requires users to manually:
+
+1. Open a dataset
+2. Understand its structure
+3. Write SQL or Python code
+4. Perform analysis
+5. Create visualizations
+6. Interpret the results
+
+The AI Data Analyst Agent aims to automate this workflow.
+
+### Traditional Workflow
+
+```text
+Dataset
+   ↓
+Understand Data
+   ↓
+Write SQL / Python
+   ↓
+Analyze
+   ↓
+Create Charts
+   ↓
+Interpret Results
+````
+
+### AI Data Analyst Workflow
+
+```text
+Upload Dataset
+      ↓
+Dataset Inspection
+      ↓
+Natural Language Question
+      ↓
+Analysis Planning
+      ↓
+SQL / Python Generation
+      ↓
+Validation
+      ↓
+Execution
+      ↓
+Visualization
+      ↓
+Insight Generation
+```
+
+---
+
+# 🎯 Project Goals
+
+The final system aims to provide the capabilities of a junior data analyst through an agentic AI workflow.
+
+### Core Capabilities
+
+* CSV upload
+* Excel upload
+* Dataset profiling
+* Schema detection
+* Missing-value analysis
+* Duplicate detection
+* Natural-language data querying
+* SQL generation
+* SQL validation
+* SQL execution
+* Automatic visualization
+* Statistical analysis
+* Insight generation
+
+### Advanced Capabilities
+
+* Multi-step analysis planning
+* Query self-correction
+* Conversational analysis
+* Anomaly detection
+* Correlation analysis
+* Trend analysis
+* Forecasting
+* Automated exploratory data analysis
+* Automated report generation
+* Analysis history
+
+---
+
+# 🏗️ Architecture
+
+The final architecture is planned as:
+
+```text
+                         USER
+                           │
+                           ▼
+                  ┌─────────────────┐
+                  │    React UI     │
+                  └────────┬────────┘
+                           │
+                           ▼
+                  ┌─────────────────┐
+                  │     FastAPI     │
+                  │     Backend     │
+                  └────────┬────────┘
+                           │
+                           ▼
+                 ┌───────────────────┐
+                 │     LangGraph     │
+                 │   Agent Workflow  │
+                 └─────────┬─────────┘
+                           │
+              ┌────────────┼────────────┐
+              │            │            │
+              ▼            ▼            ▼
+        Schema Tool    SQL Tool    Python/ML Tools
+              │            │            │
+              └────────────┼────────────┘
+                           │
+                           ▼
+                    ┌────────────┐
+                    │   DuckDB   │
+                    │  Analytics │
+                    └─────┬──────┘
+                          │
+                          ▼
+                  ┌───────────────┐
+                  │ Result        │
+                  │ Validation    │
+                  └───────┬───────┘
+                          │
+              ┌───────────┼───────────┐
+              ▼           ▼           ▼
+          Plotly      Statistics     ML
+          Charts        Engine      Models
+              │           │           │
+              └───────────┼───────────┘
+                          ▼
+                  ┌───────────────┐
+                  │ LLM Insight   │
+                  │ Generation    │
+                  └───────┬───────┘
+                          │
+                          ▼
+                    FINAL ANSWER
+```
+
+---
+
+# 🛠️ Technology Stack
+
+## Backend
+
+* **Python**
+* **FastAPI**
+* **Pydantic**
+
+## Data Processing
+
+* **Pandas**
+* **NumPy**
+
+## Analytical Database
+
+* **DuckDB**
+
+## AI / Agent Layer
+
+Planned:
+
+* **LLM API**
+* **LangGraph**
+
+## Visualization
+
+Planned:
+
+* **Plotly**
+
+## Machine Learning
+
+Planned:
+
+* **Scikit-learn**
+* Isolation Forest
+* Forecasting models
+
+## Frontend
+
+Planned:
+
+* **React**
+
+---
+
+# 📅 Development Roadmap
+
+The project is being developed incrementally over six weeks.
+
+## Week 1 — Dataset Engine
+
+### Status: 🟢 In Progress
+
+```text
+Project Setup
+     ↓
+FastAPI
+     ↓
+File Upload
+     ↓
+Pandas
+     ↓
+DuckDB
+     ↓
+Schema Detection
+     ↓
+Dataset Profiling
+```
+
+### Implemented
+
+* [x] FastAPI project setup
+* [x] CSV file upload
+* [x] Excel file upload
+* [x] Pandas dataset ingestion
+* [x] DuckDB database creation
+* [x] Automatic table creation
+* [x] Schema detection
+* [x] Numeric/categorical/date/boolean classification
+* [x] Missing-value analysis
+* [x] Duplicate-row detection
+* [x] Numerical statistics
+* [x] Categorical value analysis
+* [x] Dataset profile API
+* [x] Dataset schema API
+
+### Current API Endpoints
+
+| Method | Endpoint                         | Description              |
+| ------ | -------------------------------- | ------------------------ |
+| GET    | `/`                              | API status               |
+| POST   | `/upload`                        | Upload CSV/Excel dataset |
+| GET    | `/datasets/{dataset_id}/profile` | Dataset profile          |
+| GET    | `/datasets/{dataset_id}/schema`  | Dataset schema           |
+
+---
+
+# Week 2 — Natural Language → SQL
+
+### Planned
+
+```text
+Natural Language Question
+          ↓
+        LLM
+          ↓
+    Schema Context
+          ↓
+      SQL Query
+          ↓
+    SQL Validator
+          ↓
+       DuckDB
+          ↓
+        Result
+```
+
+Examples:
+
+```text
+"What is the average revenue?"
+
+"Which region has the highest profit?"
+
+"What are the top 10 products by sales?"
+```
+
+Planned features:
+
+* [ ] LLM integration
+* [ ] Schema-aware prompting
+* [ ] Natural-language question processing
+* [ ] SQL generation
+* [ ] SQL validation
+* [ ] Safe SQL execution
+
+---
+
+# Week 3 — Agentic Workflow
+
+### Planned
+
+```text
+User Question
+      ↓
+Intent Analyzer
+      ↓
+Analysis Planner
+      ↓
+Tool Selection
+      ↓
+SQL / Python Execution
+      ↓
+Result Validation
+      ↓
+Self-Correction
+      ↓
+Final Result
+```
+
+Planned features:
+
+* [ ] LangGraph integration
+* [ ] Agent state
+* [ ] Intent analysis
+* [ ] Analysis planner
+* [ ] Tool selection
+* [ ] SQL error analysis
+* [ ] Query regeneration
+* [ ] Self-correction
+* [ ] Retry mechanism
+
+---
+
+# Week 4 — Visualization & Insights
+
+### Planned
+
+```text
+Analysis Result
+      ↓
+Chart Selection
+      ↓
+Plotly Visualization
+      ↓
+Insight Generation
+      ↓
+Final Response
+```
+
+Planned features:
+
+* [ ] Automatic chart selection
+* [ ] Plotly integration
+* [ ] Bar charts
+* [ ] Line charts
+* [ ] Histograms
+* [ ] Scatter plots
+* [ ] Insight generation
+* [ ] Dashboard UI
+
+---
+
+# Week 5 — Advanced Analytics
+
+### Planned
+
+#### Statistical Analysis
+
+* [ ] Correlation analysis
+* [ ] Descriptive statistics
+* [ ] Distribution analysis
+
+#### Anomaly Detection
+
+```text
+User Question
+      ↓
+Anomaly Detection Tool
+      ↓
+Isolation Forest
+      ↓
+Detected Anomalies
+      ↓
+Visualization
+```
+
+#### Forecasting
+
+```text
+Historical Data
+      ↓
+Time-Series Preparation
+      ↓
+Forecasting Model
+      ↓
+Future Predictions
+      ↓
+Visualization
+```
+
+#### Automated EDA
+
+```text
+Dataset
+   ↓
+Profiling
+   ↓
+Statistics
+   ↓
+Correlation
+   ↓
+Outlier Detection
+   ↓
+Trend Analysis
+   ↓
+Automatic Insights
+```
+
+---
+
+# Week 6 — Production Features
+
+### Planned
+
+* [ ] Authentication
+* [ ] Dataset history
+* [ ] Conversation history
+* [ ] Caching
+* [ ] Logging
+* [ ] Testing
+* [ ] Docker
+* [ ] Deployment
+* [ ] Observability
+* [ ] Evaluation framework
+* [ ] Project documentation
+* [ ] Demo
+
+---
+
+# 🔐 Security
+
+Security is an important part of the system because the application will eventually execute AI-generated analytical queries.
+
+The system will implement controlled execution.
+
+### SQL Security
+
+Allowed operations:
+
+```text
+SELECT
+FROM
+WHERE
+GROUP BY
+ORDER BY
+HAVING
+LIMIT
+JOIN
+```
+
+Dangerous operations will be blocked:
+
+```text
+DROP
+DELETE
+UPDATE
+INSERT
+ALTER
+TRUNCATE
+CREATE
+```
+
+The LLM-generated SQL will therefore be treated as **untrusted output** and validated before execution.
+
+### Python Execution
+
+If Python-based analysis is introduced, arbitrary LLM-generated Python should not execute directly on the host system.
+
+A restricted execution environment will be considered with:
+
+* CPU limits
+* Memory limits
+* Execution timeout
+* Restricted filesystem access
+* No network access
+
+---
+
+# 🧪 Evaluation
+
+The final system will include an evaluation dataset containing:
+
+```text
+Question
+Expected SQL
+Expected Result
+Expected Chart
+```
+
+Example:
+
+```text
+Question:
+What is the average salary by department?
+
+Expected SQL:
+SELECT department, AVG(salary)
+FROM employees
+GROUP BY department;
+```
+
+The system can then be evaluated using:
+
+### SQL Accuracy
+
+```text
+Correct SQL Queries
+────────────────────
+Total Queries
+```
+
+### Execution Accuracy
+
+```text
+Successful Executions
+─────────────────────
+Total Queries
+```
+
+### Result Accuracy
+
+Compare the generated result with the expected database result.
+
+### Agent Metrics
+
+* Tool-selection accuracy
+* Average retries
+* Average latency
+* Token usage
+* Query execution time
+
+---
+
+# 📂 Project Structure
+
+Current structure:
+
+```text
+ai-data-analyst-agent/
+│
+├── app/
+│   ├── __init__.py
+│   └── main.py
+│
+├── data/
+│   ├── uploads/
+│   │   └── .gitkeep
+│   │
+│   └── duckdb/
+│       └── .gitkeep
+│
+├── .gitignore
+│
+├── requirements.txt
+│
+└── README.md
+```
+
+The final project structure is planned to evolve into:
+
+```text
+ai-data-analyst-agent/
+│
+├── backend/
+│   ├── main.py
+│   │
+│   ├── api/
+│   │   ├── upload.py
+│   │   ├── analysis.py
+│   │   ├── chat.py
+│   │   └── datasets.py
+│   │
+│   ├── agents/
+│   │   ├── graph.py
+│   │   ├── state.py
+│   │   ├── planner.py
+│   │   ├── sql_agent.py
+│   │   ├── validator.py
+│   │   ├── visualization_agent.py
+│   │   └── insight_agent.py
+│   │
+│   ├── tools/
+│   │   ├── schema_tool.py
+│   │   ├── sql_tool.py
+│   │   ├── python_tool.py
+│   │   ├── statistics_tool.py
+│   │   ├── anomaly_tool.py
+│   │   └── forecasting_tool.py
+│   │
+│   ├── database/
+│   │   ├── duckdb_manager.py
+│   │   └── metadata.py
+│   │
+│   ├── services/
+│   │   ├── file_service.py
+│   │   ├── dataset_service.py
+│   │   └── chart_service.py
+│   │
+│   ├── models/
+│   │   └── schemas.py
+│   │
+│   ├── prompts/
+│   │   ├── planner.txt
+│   │   ├── sql_generator.txt
+│   │   └── insight_generator.txt
+│   │
+│   └── tests/
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   └── App.jsx
+│   │
+├── data/
+├── notebooks/
+│
+├── .env
+├── .gitignore
+├── requirements.txt
+├── Dockerfile
+├── docker-compose.yml
+└── README.md
+```
+
+---
+
+# 🚀 Installation
+
+## 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/ai-data-analyst-agent.git
+```
+
+```bash
+cd ai-data-analyst-agent
+```
+
+## 2. Create a virtual environment
+
+Windows:
+
+```bash
+python -m venv .venv
+```
+
+Activate it:
+
+```bash
+.venv\Scripts\activate
+```
+
+Linux/macOS:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+## 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# ▶️ Running the Application
+
+Start the FastAPI server:
+
+```bash
+uvicorn app.main:app --reload
+```
+
+The application will run at:
+
+```text
+http://127.0.0.1:8000
+```
+
+Interactive API documentation:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+---
+
+# 🔄 Current Week 1 Workflow
+
+Upload a dataset:
+
+```text
+CSV / Excel
+     ↓
+FastAPI
+     ↓
+Pandas
+     ↓
+DuckDB
+     ↓
+Schema Detection
+     ↓
+Dataset Profiling
+```
+
+For example:
+
+```text
+Dataset: industry.csv
+
+Rows: 43
+Columns: 1
+
+Column:
+Industry
+
+Type:
+Categorical
+
+Missing Values:
+0
+
+Duplicate Rows:
+0
+
+Unique Values:
+43
+```
+
+---
+
+# 💡 Example Future Interaction
+
+Once the complete agent is implemented, a user will be able to upload:
+
+```text
+ecommerce_sales.csv
+```
+
+and ask:
+
+```text
+Which product category generated the most revenue in 2025?
+```
+
+The agent will perform:
+
+```text
+User Question
+      ↓
+Intent Analysis
+      ↓
+Analysis Planning
+      ↓
+SQL Generation
+      ↓
+SQL Validation
+      ↓
+DuckDB Execution
+      ↓
+Result Validation
+      ↓
+Visualization
+      ↓
+Insight Generation
+```
+
+And return:
+
+```text
+Electronics generated the highest revenue
+in 2025 with total revenue of ₹18.43 lakh.
+```
+
+along with the relevant visualization and SQL query.
+
+---
+
+# 🎯 Final Objective
+
+The final objective is to build a reliable AI data analyst that combines:
+
+```text
+LLM Reasoning
+      +
+Agentic Workflows
+      +
+Deterministic Data Processing
+      +
+SQL Analytics
+      +
+Machine Learning
+      +
+Data Visualization
+```
+
+The LLM will handle reasoning and planning, while actual numerical computation and database operations will be performed by deterministic tools such as DuckDB, Pandas, and Scikit-learn.
+
+This separation is intended to reduce hallucinations and improve analytical reliability.
+
+---
+
+# 📌 Project Status
+
+| Phase                            | Status         |
+| -------------------------------- | -------------- |
+| Week 1 — Dataset Engine          | 🟢 In Progress |
+| Week 2 — NL → SQL                | ⚪ Planned      |
+| Week 3 — Agentic Workflow        | ⚪ Planned      |
+| Week 4 — Visualization           | ⚪ Planned      |
+| Week 5 — Advanced Analytics      | ⚪ Planned      |
+| Week 6 — Production & Deployment | ⚪ Planned      |
+
+---
+
+# 👩‍💻 Author
+
+**Ishya Bommireddy**
+
+Computer Science Engineering
+
+AI / Machine Learning / Data Science / Generative AI
+
+---
+
+## ⭐ Project Vision
+
+> Build an AI system that doesn't just answer questions about data, but actually performs the work of a data analyst.
+
